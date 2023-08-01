@@ -4,7 +4,7 @@ setup: true
 orbs:
   orb-tools: circleci/orb-tools@11.5
   shellcheck: circleci/shellcheck@3.1
-  hello-world: viar/hello-world@0.0.1
+  hello: viar/hello-world@0.0.1
 
 filters: &filters
   tags:
@@ -33,5 +33,5 @@ workflows:
           vcs-type: << pipeline.project.type >>
           requires: [orb-tools/publish]
           filters: *filters
-      - hello-world/greet:
+      - hello/greet:
           to: Test
